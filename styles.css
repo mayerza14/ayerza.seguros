@@ -347,8 +347,8 @@ nav {
 .logo-card .logo-img img {
   max-height: 48px;
   max-width: 130px;
-  width: auto;
-  height: auto;
+  width: 130px;
+  height: 48px;
   object-fit: contain;
 }
 /* Placeholder shown before real logo */
