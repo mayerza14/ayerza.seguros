@@ -88,6 +88,7 @@ nav {
   flex-direction: column;
   line-height: 1.1;
   text-decoration: none;
+  gap: 8px;
 }
 .nav-logo span:first-child {
   font-family: 'Playfair Display', serif;
@@ -389,18 +390,27 @@ nav {
   flex-wrap: wrap;
 }
 .servicios-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 20px;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  align-items: stretch;
 }
+.servicios-grid::-webkit-scrollbar { display: none; }
 .servicio-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px 28px;
+  padding: 28px 24px;
   transition: all .3s;
   position: relative;
   overflow: hidden;
+  min-width: 260px;
+  max-width: 260px;
+  flex-shrink: 0;
 }
 .servicio-card::before {
   content: '';
@@ -770,9 +780,11 @@ footer { background: #060f1e; color: rgba(255,255,255,.4); padding: 32px 0; font
   .hero-photo-frame { width: 220px; height: 260px; }
   .hero-stats { gap: 24px; }
   .hero-stat-num { font-size: 1.7rem; }
-  .servicios-grid { grid-template-columns: 1fr; gap: 16px; }
+  .servicios-grid { gap: 16px; }
   .porq-grid { grid-template-columns: 1fr; gap: 36px; }
   .espec-grid { grid-template-columns: 1fr; }
+  .espec-visual { order: 2; }
+  .espec-content { order: 1; }
   .test-grid { grid-template-columns: 1fr; }
   .contacto-grid { grid-template-columns: 1fr; gap: 36px; }
   .servicios-head { flex-direction: column; align-items: flex-start; }
