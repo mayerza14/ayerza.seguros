@@ -597,7 +597,7 @@ nav {
 #testimonios { padding: 100px 0; }
 .test-head { text-align: center; margin-bottom: 52px; }
 .test-head .section-sub { margin: 10px auto 0; }
-.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 860px; margin: 0 auto; }
 .test-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -658,6 +658,7 @@ nav {
   font-weight: 500;
   font-size: .95rem;
   transition: color .2s;
+  display: block;
 }
 .contact-item a:hover { color: var(--gold); }
 .contact-card {
