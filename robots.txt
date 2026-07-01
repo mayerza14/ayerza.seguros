@@ -7,4 +7,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://ayerza-seguros.vercel.app/sitemap.xml
+Sitemap: https://www.organizacionayerza.com.ar/sitemap.xml
