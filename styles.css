@@ -307,6 +307,60 @@ nav {
 .asseg-header { text-align: center; margin-bottom: 40px; }
 .asseg-header p { color: var(--muted); font-size: .9rem; margin-top: 6px; }
 .asseg-header .tag { display: block; }
+/* ─── CARRUSELES CON SCROLL HORIZONTAL (fade + flechas) ─── */
+.scroll-carousel-wrapper { position: relative; }
+.scroll-fade {
+  position: absolute;
+  top: 0;
+  bottom: 8px;
+  width: 56px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.scroll-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--fade-bg, var(--white)), transparent);
+}
+.scroll-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--fade-bg, var(--white)), transparent);
+}
+.scroll-carousel-wrapper.can-scroll-left .scroll-fade-left,
+.scroll-carousel-wrapper.can-scroll-right .scroll-fade-right {
+  opacity: 1;
+}
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s, border-color .2s, color .2s;
+}
+.scroll-arrow:hover { border-color: var(--gold); color: var(--gold); }
+.scroll-arrow-left { left: -4px; }
+.scroll-arrow-right { right: -4px; }
+.scroll-carousel-wrapper.can-scroll-left .scroll-arrow-left,
+.scroll-carousel-wrapper.can-scroll-right .scroll-arrow-right {
+  opacity: 1;
+  visibility: visible;
+}
 .logos-grid {
   display: flex;
   flex-wrap: nowrap;

@@ -24,3 +24,28 @@ document.querySelectorAll('.servicio-card, .porq-item, .espec-item, .test-card, 
   el.style.transition = 'opacity .5s ease, transform .5s ease';
   observer.observe(el);
 });
+
+// ─── CARRUSELES CON SCROLL HORIZONTAL (fade + flechas) ───
+document.querySelectorAll('.scroll-carousel-wrapper').forEach(wrapper => {
+  const track = wrapper.querySelector('.scroll-track');
+  const btnLeft = wrapper.querySelector('.scroll-arrow-left');
+  const btnRight = wrapper.querySelector('.scroll-arrow-right');
+  if (!track) return;
+
+  function updateArrows() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    wrapper.classList.toggle('can-scroll-left', track.scrollLeft > 4);
+    wrapper.classList.toggle('can-scroll-right', track.scrollLeft < maxScroll - 4);
+  }
+
+  btnLeft.addEventListener('click', () => {
+    track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' });
+  });
+  btnRight.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' });
+  });
+
+  track.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+});
